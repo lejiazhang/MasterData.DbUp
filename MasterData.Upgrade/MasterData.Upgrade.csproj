@@ -1,0 +1,705 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Scripts\Master\3.0 Stored Procedures\0.1 ASET_BRND_TYPE_CODE\**" />
+    <EmbeddedResource Remove="Scripts\Master\3.0 Stored Procedures\0.1 ASET_BRND_TYPE_CODE\**" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\0.1 ASET_BRND_TYPE_CODE\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Scripts\Master\1.0 Schema Changes\1.0.Master Schema.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\000.00_dbo_AssetBrandType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\001.00_dbo_AssetBlazeType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\002.00_dbo_AssetConditionType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\003.00_dbo_AssetMakeType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\004.00_dbo_AssetTransmissionType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\005.00_dbo_AssetSubType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\006.00_dbo_AssetType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\007.00_dbo_AssetUsageType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\008.00_dbo_AssetProductionYearType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\009.00_dbo_AssetModelYearType.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\010.00_dbo_AssetModel.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\011.00_dbo_AssetModelYearPrice.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\012.00_dbo_AssetModelCompany.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\013.00_dbo_BPAddress.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\014.00_dbo_BPAddressAssiocation.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\015.00_dbo_BusinessPartner.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\016.00_dbo_BussinessParterCompany.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\017.00_dbo_BusinessPartnerRole.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\018.00_dbo_Relationship.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\019.00_dbo_ChartDetail.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\020.00_dbo_ChartMain.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\021.00_dbo_FinancialGroup.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\022.00_dbo_FinancialProduct.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\023.00_dbo_FinancialParameter.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\024.00_dbo_FinancialParameterChart.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\025.00_dbo_FinancialPaymentFrequency.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\026.00_dbo_FinancialProductBP.table..sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\027.00_dbo_FPAssetSelection.table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\095.00_dbo_UserDefinition.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\098.00_dbo_Lookupmain.Table.sql" />
+    <None Remove="Scripts\Master\2.0 Initial Scripts\099.00_dbo_Lookupdetail.Table.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_BRND_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_COND_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MAKE_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_CODE_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_YEAR_PRCE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_YEAR_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_PROD_YEAR_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_SBTP_BLAZ_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_SBTP_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_TRAN_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_USAG_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ADDR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ADDR_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_CMPY_ADDL.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ID_TYPE_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_MAIN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_RLSP_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_RLSP_ASOC_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ROLE_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ROLE_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboCHRT_DCSN_TABL.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboCHRT_MSTR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_FNCL_PROD.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_FNCL_PROD_GRP.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_ASET_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_CHRG_PAY_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_INSU_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_INTR_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_OVRD_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNDG_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNDG_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_CHRT_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_FREQ_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_VADD_CONF_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboLKUP_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboLKUP_MAIN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboLKUP_RANG_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboUMS_SYS_USR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboUMS_USR_EXTR_RLTN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_BRND_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_COND_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MAKE_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_CODE_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_YEAR_PRCE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_YEAR_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_PROD_YEAR_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_SBTP_BLAZ_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_SBTP_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_TRAN_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_USAG_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ADDR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ADDR_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_CMPY_ADDL.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ID_TYPE_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_MAIN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_RLSP_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_RLSP_ASOC_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ROLE_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ROLE_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboCHRT_DCSN_TABL.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboCHRT_MSTR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_FNCL_PROD.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_FNCL_PROD_GRP.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_ASET_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_CHRG_PAY_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_INSU_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_INTR_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_OVRD_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNDG_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNDG_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_CHRT_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_FREQ_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_VADD_CONF_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboLKUP_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboLKUP_MAIN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboLKUP_RANG_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboUMS_SYS_USR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboUMS_USR_EXTR_RLTN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_BRND_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_COND_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MAKE_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_CODE_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_YEAR_PRCE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_YEAR_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_PROD_YEAR_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_SBTP_BLAZ_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_SBTP_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_TRAN_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_USAG_TYPE_CODE.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ADDR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ADDR_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_CMPY_ADDL.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ID_TYPE_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_MAIN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_RLSP_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_RLSP_ASOC_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ROLE_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ROLE_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboCHRT_DCSN_TABL.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboCHRT_MSTR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_FNCL_PROD.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_FNCL_PROD_GRP.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_ASET_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_ASOC.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_CHRG_PAY_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_INSU_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_INTR_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_OVRD_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNDG_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNDG_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_CHRT_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_FREQ_DET_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_VADD_CONF_ATCH.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboLKUP_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboLKUP_MAIN.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboLKUP_RANG_DET.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboUMS_SYS_USR.sql" />
+    <None Remove="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboUMS_USR_EXTR_RLTN.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Scripts\Master\1.0 Schema Changes\1.0.Master Schema.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\000.00_dbo_AssetBrandType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\001.00_dbo_AssetBlazeType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\002.00_dbo_AssetConditionType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\003.00_dbo_AssetMakeType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\004.00_dbo_AssetTransmissionType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\005.00_dbo_AssetSubType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\006.00_dbo_AssetType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\007.00_dbo_AssetUsageType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\008.00_dbo_AssetProductionYearType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\009.00_dbo_AssetModelYearType.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\010.00_dbo_AssetModel.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\011.00_dbo_AssetModelYearPrice.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\012.00_dbo_AssetModelCompany.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\013.00_dbo_BPAddress.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\014.00_dbo_BPAddressAssiocation.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\015.00_dbo_BusinessPartner.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\016.00_dbo_BussinessParterCompany.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\017.00_dbo_BusinessPartnerRole.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\018.00_dbo_Relationship.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\019.00_dbo_ChartDetail.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\020.00_dbo_ChartMain.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\021.00_dbo_FinancialGroup.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\022.00_dbo_FinancialProduct.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\023.00_dbo_FinancialParameter.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\024.00_dbo_FinancialParameterChart.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\025.00_dbo_FinancialPaymentFrequency.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\026.00_dbo_FinancialProductBP.table..sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\027.00_dbo_FPAssetSelection.table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\095.00_dbo_UserDefinition.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\098.00_dbo_Lookupmain.Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\2.0 Initial Scripts\099.00_dbo_Lookupdetail.Table.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_BRND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_COND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MAKE_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_CODE_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_YEAR_PRCE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_MODL_YEAR_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_PROD_YEAR_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_SBTP_BLAZ_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_SBTP_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_TRAN_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboASET_USAG_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ADDR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ADDR_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_CMPY_ADDL.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ID_TYPE_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_MAIN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_RLSP_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_RLSP_ASOC_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ROLE_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboBP_ROLE_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboCHRT_DCSN_TABL.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboCHRT_MSTR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_FNCL_PROD.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_FNCL_PROD_GRP.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_ASET_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_CHRG_PAY_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_INSU_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_INTR_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_OVRD_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNDG_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNDG_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_CHRT_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_FREQ_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboFP_TMPL_RNTL_VADD_CONF_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboLKUP_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboLKUP_MAIN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboLKUP_RANG_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboUMS_SYS_USR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSdel_dboUMS_USR_EXTR_RLTN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_BRND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_COND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MAKE_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_CODE_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_YEAR_PRCE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_MODL_YEAR_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_PROD_YEAR_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_SBTP_BLAZ_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_SBTP_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_TRAN_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboASET_USAG_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ADDR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ADDR_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_CMPY_ADDL.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ID_TYPE_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_MAIN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_RLSP_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_RLSP_ASOC_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ROLE_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboBP_ROLE_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboCHRT_DCSN_TABL.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboCHRT_MSTR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_FNCL_PROD.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_FNCL_PROD_GRP.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_ASET_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_CHRG_PAY_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_INSU_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_INTR_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_OVRD_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNDG_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNDG_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_CHRT_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_FREQ_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboFP_TMPL_RNTL_VADD_CONF_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboLKUP_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboLKUP_MAIN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboLKUP_RANG_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboUMS_SYS_USR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSins_dboUMS_USR_EXTR_RLTN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_BRND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_COND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MAKE_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_CODE_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_YEAR_PRCE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_MODL_YEAR_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_PROD_YEAR_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_SBTP_BLAZ_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_SBTP_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_TRAN_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboASET_USAG_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ADDR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ADDR_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_CMPY_ADDL.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ID_TYPE_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_MAIN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_RLSP_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_RLSP_ASOC_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ROLE_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboBP_ROLE_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboCHRT_DCSN_TABL.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboCHRT_MSTR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_FNCL_PROD.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_FNCL_PROD_GRP.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_ASET_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_ASOC.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_CHRG_PAY_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_INSU_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_INTR_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_OVRD_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNDG_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNDG_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_CHRT_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_FREQ_DET_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboFP_TMPL_RNTL_VADD_CONF_ATCH.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboLKUP_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboLKUP_MAIN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboLKUP_RANG_DET.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboUMS_SYS_USR.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Master\3.0 Stored Procedures\sp_MSupd_dboUMS_USR_EXTR_RLTN.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DbUp" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MasterData.DbUp.Common\MasterData.DbUp.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Scripts\Master\3.0 Stored Procedures\0.2 ASET_COND_TYPE_CODE\sp_MSdel_dboASET_COND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\Master\3.0 Stored Procedures\0.2 ASET_COND_TYPE_CODE\sp_MSins_dboASET_COND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\Master\3.0 Stored Procedures\0.2 ASET_COND_TYPE_CODE\sp_MSupd_dboASET_COND_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\Master\3.0 Stored Procedures\0.3 ASET_MAKE_TYPE_CODE\sp_MSdel_dboASET_MAKE_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\Master\3.0 Stored Procedures\0.3 ASET_MAKE_TYPE_CODE\sp_MSins_dboASET_MAKE_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\Master\3.0 Stored Procedures\0.3 ASET_MAKE_TYPE_CODE\sp_MSupd_dboASET_MAKE_TYPE_CODE.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\Script.Manifest.Upgrade.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
