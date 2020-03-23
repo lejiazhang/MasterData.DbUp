@@ -3,7 +3,10 @@ BEGIN TRY
 	-- Create a temporary table to hold the updated or inserted values
 	-- from the OUTPUT clause.  
 
-	DROP TABLE IF EXISTS tempdb.dbo.#TEMP_AssetModel
+	---------------------------------------------------------------------------------------------------
+
+	IF OBJECT_ID('tempdb..#TEMP_AssetModel') IS NOT NULL DROP TABLE #TEMP_AssetModel
+
 	CREATE TABLE #TEMP_AssetModel
 	(
 		[ID_Old] [int] NULL,

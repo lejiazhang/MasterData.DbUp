@@ -13,13 +13,11 @@ AssetModel, AssetModelYearPrice
 */
 
 BEGIN TRY
-
-	TRUNCATE TABLE [dbo].[AssetModelCompany];
 	
 	-- Create a temporary table to hold the updated or inserted values
 	-- from the OUTPUT clause.  
 
-	DROP TABLE IF EXISTS tempdb.dbo.#TEMP_AssetModelCompany
+	IF OBJECT_ID('tempdb..#TEMP_AssetModelCompany') IS NOT NULL DROP TABLE #TEMP_AssetModelCompany
 	CREATE TABLE #TEMP_AssetModelCompany
 	(
 		[AssetModelId_Old] [int] NULL,

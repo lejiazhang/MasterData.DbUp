@@ -1,16 +1,9 @@
 BEGIN TRY
 
-	TRUNCATE TABLE [dbo].[BusinessPartner];
-
-	INSERT INTO [dbo].[BusinessPartner]
-		([BusinessPartnerID], [CompanyID], [BusinessPartnerName], [BPNumber], [BPTypeID], [CreationDate], [LegalStatusCode], [PMSDealerNbr], [RegistrationFee], [PurchaseTax], [VatRate])
-	SELECT [BusinessPartnerID], [CompanyID], [BusinessPartnerName], [BPNumber], [BPTypeID], [CreationDate], [LegalStatusCode], [PMSDealerNbr], [RegistrationFee], [PurchaseTax], [VatRate]
-	FROM [NPOS_PROD_Master_Data_Service].[dbo].[BusinessPartner] WHERE [CompanyID] = 2
-
-
 	-- Create a temporary table to hold the updated or inserted values
 	-- from the OUTPUT clause.  
-	DROP TABLE IF EXISTS tempdb.dbo.#TEMP_BusinessPartner
+	IF OBJECT_ID('tempdb..#TEMP_BusinessPartner') IS NOT NULL DROP TABLE #TEMP_BusinessPartner
+
 	CREATE TABLE #TEMP_BusinessPartner
 	(
 		[BusinessPartnerID_Old] [int] NULL,

@@ -1,26 +1,9 @@
 BEGIN TRY
 
-	TRUNCATE TABLE [dbo].[BusinessPartnerCompany];
-
-	INSERT INTO [dbo].[BusinessPartnerCompany]
-		([BusinessPartnerID], [BusinessTypeCDE], [CompanyCode], [CreditRatingCDE], [ExternalBPNbr], [ClassificationCDE], [IndustryTypeCDE], [IndustrySubtypeCDE], 
-		 [CompanyName], [CompanyNbr], [EstablishedSinceYY], [BankCDE], [TaxRegistrationInd], [PartnershipExpiryDate], [CreationDate], [ActivateInd], [DeclarationInd], 
-		 [ExecutionDate], [RegistrationDate], [InsertedBy], [SuedInd], [SwiftCDE], [VIPInd], [ThirdParty], [WholeSale], [RCTIInd], [TaxNbr], [URLAdd], [WithholdingTaxInd], 
-		 [ReadDirectory], [WriteDirectory], [AutoScore], [PostingKeyCode], [SapLmsCode], [PaymentModeCDE], [FinancialInstitutionNbr], [SupplyingFileName], [SupplyingNbr], 
-		 [EntriesDsc], [SAPAccountNbr], [DEBankPrefix], [LoanGradeCDE], [GLAccountNbr], [InsuranceCompanyType], [RedemptionExpiryDD], [SellingExpenseAmt], [BSPInd], [CompanyNameMlg], 
-		 [RiskReviewDate], [ExposureRiskreviewDate], [ExposureRiskCDE], [RiskCDE], [CompanyNbrRpt], [TaxNbrRpt], [ExternalBPNbrRpt], [BPBranchAbbreviation], [CompanyID])
-	SELECT
-		 [BusinessPartnerID], [BusinessTypeCDE], [CompanyCode], [CreditRatingCDE], [ExternalBPNbr], [ClassificationCDE], [IndustryTypeCDE], [IndustrySubtypeCDE], [CompanyName],
-		 [CompanyNbr], [EstablishedSinceYY], [BankCDE], [TaxRegistrationInd], [PartnershipExpiryDate], [CreationDate], [ActivateInd], [DeclarationInd], [ExecutionDate], 
-		 [RegistrationDate], [InsertedBy], [SuedInd], [SwiftCDE], [VIPInd], [ThirdParty], [WholeSale], [RCTIInd], [TaxNbr], [URLAdd], [WithholdingTaxInd], [ReadDirectory], 
-		 [WriteDirectory], [AutoScore], [PostingKeyCode], [SapLmsCode], [PaymentModeCDE], [FinancialInstitutionNbr], [SupplyingFileName], [SupplyingNbr], [EntriesDsc], 
-		 [SAPAccountNbr], [DEBankPrefix], [LoanGradeCDE], [GLAccountNbr], [InsuranceCompanyType], [RedemptionExpiryDD], [SellingExpenseAmt], [BSPInd], [CompanyNameMlg], 
-		 [RiskReviewDate], [ExposureRiskreviewDate], [ExposureRiskCDE], [RiskCDE], [CompanyNbrRpt], [TaxNbrRpt], [ExternalBPNbrRpt], [BPBranchAbbreviation], [CompanyID]
-	FROM [NPOS_PROD_Master_Data_Service].[dbo].[BusinessPartnerCompany] WHERE CompanyID = 2
-
 	-- Create a temporary table to hold the updated or inserted values
 	-- from the OUTPUT clause.  
-	DROP TABLE IF EXISTS tempdb.dbo.#TEMP_BusinessPartnerCompany
+	IF OBJECT_ID('tempdb..#TEMP_BusinessPartnerCompany') IS NOT NULL DROP TABLE #TEMP_BusinessPartnerCompany
+
 	CREATE TABLE #TEMP_BusinessPartnerCompany
 	(
 		[BusinessPartnerID_Old] [int] NULL,
