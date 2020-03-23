@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboBP_ADDR]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboBP_ADDR]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboBP_ADDR]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboBP_ADDR]
     @c1 int,
     @c2 int,
@@ -51,7 +50,7 @@ begin
 		@c10,
 		@c11,
 		@c12,
-		2	) 
+		'$CompanyId$'	) 
 	end
 end  
 

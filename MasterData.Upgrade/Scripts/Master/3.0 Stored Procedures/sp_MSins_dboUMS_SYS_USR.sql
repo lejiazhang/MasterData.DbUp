@@ -1,8 +1,5 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboUMS_SYS_USR]    Script Date: 2/23/2020 12:18:04 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboUMS_SYS_USR]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboUMS_SYS_USR]
 GO
 
 CREATE procedure [dbo].[sp_MSins_dboUMS_SYS_USR]
@@ -21,7 +18,7 @@ CREATE procedure [dbo].[sp_MSins_dboUMS_SYS_USR]
     @FLAG			char(1)
 as
 begin 
-	DECLARE @COMPANYID INT = 2
+	DECLARE @COMPANYID INT = '$CompanyId$'
 	    IF (@FLAG = 'I')
 		BEGIN TRY
 			IF NOT EXISTS(SELECT * FROM UserDefinition WHERE ChildID = @SYS_USR_ID AND COMPANYID = @COMPANYID)

@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboFP_TMPL_RNTL_ATCH]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboFP_TMPL_RNTL_ATCH]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboFP_TMPL_RNTL_ATCH]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboFP_TMPL_RNTL_ATCH]
     @TMPL_RNTL_ATCH_ID int,
     @RNTL_MODE_KEY varchar(8),

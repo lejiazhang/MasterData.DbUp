@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboASET_MODL_YEAR_PRCE]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboASET_MODL_YEAR_PRCE]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboASET_MODL_YEAR_PRCE]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboASET_MODL_YEAR_PRCE]
     @c1 int,
     @c2 int,
@@ -53,7 +52,7 @@ BEGIN
         @c10,
         @c11,
         @c12,
-        2	) 
+        '$CompanyId$'	) 
     end  
 
 END

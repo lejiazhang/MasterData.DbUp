@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboASET_MODL_CODE_DET]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboASET_MODL_CODE_DET]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboASET_MODL_CODE_DET]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboASET_MODL_CODE_DET]
     @c1 int,
     @c2 varchar(500),
@@ -75,7 +74,7 @@ begin
 			@AssetModelExtDetailId,
 			@AssetModelExtId,
 			@AssetModelID,
-			2,
+			'$CompanyId$',
 			@AssetMakeId,
 			@AssetTypeID,
 			@AssetSubTypeID,

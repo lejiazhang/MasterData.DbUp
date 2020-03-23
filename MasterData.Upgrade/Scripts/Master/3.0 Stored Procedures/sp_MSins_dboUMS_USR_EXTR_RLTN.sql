@@ -16,7 +16,7 @@ CREATE procedure [dbo].[sp_MSins_dboUMS_USR_EXTR_RLTN]
     @FLAG char(1)
 as
 begin 
-	DECLARE @COMPANYID INT = 2
+	DECLARE @COMPANYID INT = '$CompanyId$'
 	    IF (@FLAG = 'I')
 		BEGIN TRY
 				BEGIN				

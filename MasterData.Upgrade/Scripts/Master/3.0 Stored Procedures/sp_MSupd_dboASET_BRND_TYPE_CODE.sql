@@ -1,11 +1,5 @@
-USE [NPOS_PROD_Master_LC]
-GO
-
-/****** Object:  StoredProcedure [dbo].[sp_MSupd_dboASET_BRND_TYPE_CODE]    Script Date: 2/19/2020 2:34:20 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSupd_dboASET_BRND_TYPE_CODE]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSupd_dboASET_BRND_TYPE_CODE]
 GO
 
 create procedure [dbo].[sp_MSupd_dboASET_BRND_TYPE_CODE]

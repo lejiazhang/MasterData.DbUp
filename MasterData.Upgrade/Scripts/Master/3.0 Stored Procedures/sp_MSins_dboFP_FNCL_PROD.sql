@@ -1,8 +1,5 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboFP_FNCL_PROD]    Script Date: 2/18/2020 11:42:01 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboFP_FNCL_PROD]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboFP_FNCL_PROD]
 GO
 
 CREATE PROCEDURE [dbo].[sp_MSins_dboFP_FNCL_PROD]
@@ -21,7 +18,7 @@ CREATE PROCEDURE [dbo].[sp_MSins_dboFP_FNCL_PROD]
 AS
 BEGIN
     DECLARE @COMPANYID INT, @FINC_TYPE_KEY varchar(25);
-    SET @COMPANYID = 2
+    SET @COMPANYID = '$CompanyId$'
 
 	SET @FINC_TYPE_KEY = (SELECT FINC_TYPE_KEY FROM [dbo].[FP_FNCL_PROD_GRP] WHERE [FNCL_PROD_GRP_ID] = @FNCL_PROD_GRP_ID)
 

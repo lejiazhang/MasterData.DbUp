@@ -1,11 +1,5 @@
-USE [NPOS_PROD_Master_LC]
-GO
-
-/****** Object:  StoredProcedure [dbo].[sp_MSdel_dboBP_CMPY_ADDL]    Script Date: 2/28/2020 3:15:49 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSdel_dboBP_CMPY_ADDL]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSdel_dboBP_CMPY_ADDL]
 GO
 
 create procedure [dbo].[sp_MSdel_dboBP_CMPY_ADDL]

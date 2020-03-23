@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboFP_TMPL_RNTL_CHRT_ATCH]    Script Date: 2/27/2020 5:53:24 PM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboFP_TMPL_RNTL_CHRT_ATCH]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboFP_TMPL_RNTL_CHRT_ATCH]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboFP_TMPL_RNTL_CHRT_ATCH]
     @TMPL_RNTL_CHRT_ATCH_ID int,
     @TMPL_RNTL_ATCH_ID int,
@@ -37,7 +36,7 @@ begin
 				   ,@TransactionTypeId
 				   ,GETDATE()
 				   ,'New Sync'
-				   ,2)
+				   ,'$CompanyId$')
 		end
 	end
 

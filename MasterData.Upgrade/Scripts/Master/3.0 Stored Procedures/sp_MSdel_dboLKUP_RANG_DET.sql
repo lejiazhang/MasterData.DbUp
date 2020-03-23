@@ -1,16 +1,13 @@
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSdel_dboLKUP_RANG_DET]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSdel_dboLKUP_RANG_DET]
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 CREATE procedure [dbo].[sp_MSdel_dboLKUP_RANG_DET]
 		@pkc1 int
 as
 begin 
 
-declare @companyId smallint = 1
+declare @companyId smallint = '$CompanyId$'
 
 	IF EXISTS(SELECT * FROM LookupRangeDetail WHERE LookupRangeID = @pkc1)
 		begin

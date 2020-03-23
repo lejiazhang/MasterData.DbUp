@@ -1,8 +1,5 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSupd_dboUMS_SYS_USR]    Script Date: 2/23/2020 12:39:44 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSupd_dboUMS_SYS_USR]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSupd_dboUMS_SYS_USR]
 GO
 
 CREATE procedure [dbo].[sp_MSupd_dboUMS_SYS_USR]
@@ -24,7 +21,7 @@ CREATE procedure [dbo].[sp_MSupd_dboUMS_SYS_USR]
 as
 begin  
 	DECLARE @PRIMARYKEY_TEXT NVARCHAR(100) = ''
-	DECLARE @COMPANYID SMALLINT = 1
+	DECLARE @COMPANYID SMALLINT = '$CompanyId$'
 
 	IF (@FLAG = 'D')
 		BEGIN Try

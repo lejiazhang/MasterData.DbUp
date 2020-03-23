@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboASET_MAKE_TYPE_CODE]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboASET_MAKE_TYPE_CODE]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboASET_MAKE_TYPE_CODE]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboASET_MAKE_TYPE_CODE]
     @c1 int,
     @c2 nvarchar(200),
@@ -31,7 +30,7 @@ begin
         @c3,
         @c4,
         @c5,
-        2 ) 
+        '$CompanyId$' ) 
     end 
 end
 

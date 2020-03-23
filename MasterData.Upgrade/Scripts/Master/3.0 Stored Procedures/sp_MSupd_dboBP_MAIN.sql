@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSupd_dboBP_MAIN]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSupd_dboBP_MAIN]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSupd_dboBP_MAIN]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSupd_dboBP_MAIN]
 		@c1 int = NULL,
 		@c2 nvarchar(605) = NULL,

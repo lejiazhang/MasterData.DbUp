@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboBP_ROLE_ASOC]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboBP_ROLE_ASOC]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboBP_ROLE_ASOC]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboBP_ROLE_ASOC]
     @ROLE_ASOC_ID int,
     @BP_ROLE_ID int,
@@ -44,7 +43,7 @@ begin
         ) values (
         @BP_ROLE_ID,
         @BUSS_PTNR_ID,
-        2,
+        '$CompanyId$',
         @ACT_IND	) 
     end  
 end

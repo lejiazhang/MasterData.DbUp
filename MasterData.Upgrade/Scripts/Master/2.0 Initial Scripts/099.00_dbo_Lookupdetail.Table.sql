@@ -28,16 +28,39 @@ BEGIN TRY
 		[FIMLOOKUPDETAILID] int null
 	);  
 
-	-- Merge from STAGE_DB_AFC to NPOS_PROD_Master_LC
+	-- Merge from STAGE_DB_AFC to NPOS_PROD_Master_AFC
 	MERGE INTO [dbo].[LookupDetail] AS Target
 	USING
 	(
+ 
+
 		SELECT [LKUP_DET].LKUP_MAIN_ID, [LKUP_DET].LKUP_DET_ID, [LKUP_DET].EXTR_CODE, LKUP_DET.NME as NARRATION,
-				CMPY_ID as [CompanyID], PRNT_ID as [ParentID], ACT_IND as [ActiveInd], LookupDetailFIM.LookupDetailID as [FIMLOOKUPDETAILID]
-		FROM [dbo].[LKUP_DET]
+				CMPY_ID as [CompanyID], PRNT_ID as [ParentID], ACT_IND as [ActiveInd], max(LookupDetailFIM.LookupDetailID) as [FIMLOOKUPDETAILID]
+		FROM [STAGING_DB_AFC].[dbo].[LKUP_DET]
 		inner join [dbo].LookupMain on [LKUP_DET].LKUP_MAIN_ID = LookupMain.LookupMainID
 		left join dbo.LookupDetailFIM on LookupMain.FIMLOOKUPMAINID = LookupDetailFIM.LookupMainID
-		and [LKUP_DET].EXTR_CODE = LookupDetailFIM.ExternalCode
+		and [LKUP_DET].EXTR_CODE = LookupDetailFIM.ExternalCode and  LookupDetailFIM.companyid = '$CompanyId$'-- LKUP_MAIN_ID = 2582 and LKUP_DET_ID = 1075 
+		group by  [LKUP_DET].LKUP_MAIN_ID, [LKUP_DET].LKUP_DET_ID, [LKUP_DET].EXTR_CODE, LKUP_DET.NME ,
+				CMPY_ID , PRNT_ID , ACT_IND  
+ 
+ -- select * from [NPOS_PROD_Master_AFC].[dbo].[LookupDetail] where   exists (select * from [STAGING_DB_AFC].[dbo].[LKUP_DET]
+ 
+ --where [LookupMainID] =  [LKUP_MAIN_ID] and [LookupDetailID] =  [LKUP_DET_ID])
+
+		--select * from [STAGING_DB_AFC].[dbo].[LKUP_DET] where  LKUP_MAIN_ID = 2582  and LKUP_DET_ID = 1075
+		--select * from [NPOS_PROD_Master_AFC].dbo.LookupDetailFIM where LookupDetailID = 6708
+		--select * from [NPOS_PROD_Master_AFC].dbo.LookupDetailFIM where LookupDetailID = 6217 or LookupDetailID = 8194
+		--select * from [NPOS_PROD_Master_AFC].dbo.LookupDetailFIM where lookupmainid = 26 and companyid= 1 and externalcode = '1075'
+		
+		--SELECT  [LKUP_DET].LKUP_MAIN_ID, [LKUP_DET].LKUP_DET_ID, count(1)
+		--FROM [STAGING_DB_AFC].[dbo].[LKUP_DET]
+		--inner join [NPOS_PROD_Master_AFC].[dbo].LookupMain on [LKUP_DET].LKUP_MAIN_ID = LookupMain.LookupMainID
+		--left join [NPOS_PROD_Master_AFC].dbo.LookupDetailFIM on LookupMain.FIMLOOKUPMAINID = LookupDetailFIM.LookupMainID
+		--and [LKUP_DET].EXTR_CODE = LookupDetailFIM.ExternalCode and LookupDetailFIM.companyid = 1
+		--group by [LKUP_DET].LKUP_MAIN_ID, [LKUP_DET].LKUP_DET_ID having  count(1) >1
+
+		--select * from [STAGING_DB_AFC].[dbo].[LKUP_DET]
+		--inner join [NPOS_PROD_Master_AFC].[dbo].LookupMain on [LKUP_DET].LKUP_MAIN_ID = LookupMain.LookupMainID
 	)
 	AS [Source] (LKUP_MAIN_ID, LKUP_DET_ID, EXTR_CODE, NARRATION, [CompanyID], [ParentID], [ActiveInd], [FIMLOOKUPDETAILID]) 
 		ON 

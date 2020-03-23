@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboBP_MAIN]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboBP_MAIN]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboBP_MAIN]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboBP_MAIN]
     @BUSS_PTNR_ID int,
     @FULL_NME_C nvarchar(605),
@@ -40,7 +39,7 @@ begin
 		@LEGL_STS_KEY,
 		@CPTL_REGT_AMNT,
 		GETDATE(),
-		2 ) 
+		'$CompanyId$') 
 
 	end  
 
@@ -63,7 +62,7 @@ begin
 			@INDY_SBTP_ID,
 			@REGT_DTE,
 			@LOAN_GRNG_ID,
-			2
+			'$CompanyId$'
 		)
 	end
 end

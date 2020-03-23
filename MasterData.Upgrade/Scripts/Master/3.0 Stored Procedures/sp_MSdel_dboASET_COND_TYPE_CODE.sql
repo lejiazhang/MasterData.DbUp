@@ -1,4 +1,3 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSdel_dboASET_COND_TYPE_CODE]    Script Date: 2/11/2020 9:04:34 AM ******/
 IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSdel_dboASET_COND_TYPE_CODE]') AND type in (N'P', N'PC'))
 	DROP PROCEDURE [dbo].[sp_MSdel_dboASET_COND_TYPE_CODE]
 GO
@@ -22,3 +21,5 @@ begin
 				End
 	END
 end  
+
+GO

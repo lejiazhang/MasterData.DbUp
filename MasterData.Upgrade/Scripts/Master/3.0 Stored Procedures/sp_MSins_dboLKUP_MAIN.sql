@@ -1,9 +1,6 @@
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboLKUP_MAIN]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboLKUP_MAIN]
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 CREATE procedure [dbo].[sp_MSins_dboLKUP_MAIN]
     @LKUP_MAIN_ID int,
@@ -15,7 +12,7 @@ CREATE procedure [dbo].[sp_MSins_dboLKUP_MAIN]
     @FLAG char(1)
 as
 begin 
-		DECLARE @COMPANYID INT = 2
+		DECLARE @COMPANYID INT = '$CompanyId$'
 
 	    IF (@FLAG = 'I')
 			BEGIN TRY

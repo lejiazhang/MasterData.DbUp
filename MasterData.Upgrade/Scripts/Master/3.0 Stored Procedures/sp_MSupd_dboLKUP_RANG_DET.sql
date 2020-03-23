@@ -1,13 +1,6 @@
-USE [NPOS_PROD_Master_LC]
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSupd_dboLKUP_RANG_DET]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSupd_dboLKUP_RANG_DET]
 GO
-
-/****** Object:  StoredProcedure [dbo].[sp_MSupd_dboLKUP_RANG_DET]    Script Date: 3/10/2020 1:22:17 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 CREATE procedure [dbo].[sp_MSupd_dboLKUP_RANG_DET]
 		@LKUP_RANG_ID int = NULL,
@@ -26,7 +19,7 @@ as
 begin  
 
 	DECLARE @PRIMARYKEY_TEXT NVARCHAR(100) = ''
-	DECLARE @COMPANYID SMALLINT = 1
+	DECLARE @COMPANYID SMALLINT = '$CompanyId$'
 
 	IF (@FLAG = 'D')
 		BEGIN TRY

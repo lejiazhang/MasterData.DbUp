@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboCHRT_MSTR]    Script Date: 2/11/2020 9:04:34 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboCHRT_MSTR]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboCHRT_MSTR]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboCHRT_MSTR]
     @MSTR_ID int,
     @CHRT_NME varchar(100),
@@ -29,7 +28,7 @@ begin
         @CHRT_TYPE_ID,
         @ACT_IND,
         GETDATE(),
-        2	) 
+        '$CompanyId$'	) 
     end  
 
 end

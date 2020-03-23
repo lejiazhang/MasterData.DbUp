@@ -1,8 +1,7 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboFP_TMPL_RNTL_FREQ_DET_ATCH]    Script Date: 2/27/2020 3:32:16 PM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboFP_TMPL_RNTL_FREQ_DET_ATCH]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboFP_TMPL_RNTL_FREQ_DET_ATCH]
 GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 create procedure [dbo].[sp_MSins_dboFP_TMPL_RNTL_FREQ_DET_ATCH]
     @TMPL_RNTL_FREQ_DET_ATCH_ID int,
     @RNTL_FREQ_KEY varchar(25),
@@ -29,7 +28,7 @@ begin
 			 VALUES
 				   (@FinancialProductId
 				   ,@RNTL_FREQ_KEY
-				   ,2 )
+				   ,'$CompanyId$' )
 			 
 		end
 		

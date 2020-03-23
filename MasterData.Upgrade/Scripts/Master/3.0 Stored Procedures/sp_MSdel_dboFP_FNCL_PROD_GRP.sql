@@ -1,7 +1,5 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSdel_dboFP_FNCL_PROD_GRP]    Script Date: 2/20/2020 9:25:26 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSdel_dboFP_FNCL_PROD_GRP]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSdel_dboFP_FNCL_PROD_GRP]
 GO
 
 CREATE procedure [dbo].[sp_MSdel_dboFP_FNCL_PROD_GRP]		

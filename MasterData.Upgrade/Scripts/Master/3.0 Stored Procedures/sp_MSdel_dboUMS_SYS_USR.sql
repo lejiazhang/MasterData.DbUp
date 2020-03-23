@@ -1,15 +1,12 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSdel_dboUMS_SYS_USR]    Script Date: 2/23/2020 12:47:52 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSdel_dboUMS_SYS_USR]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSdel_dboUMS_SYS_USR]
 GO
 
 CREATE procedure [dbo].[sp_MSdel_dboUMS_SYS_USR]
 		@pkc1 int
 as
 begin 
-	declare @companyId smallint = 1
+	declare @companyId smallint = '$CompanyId$'
 	IF EXISTS(SELECT * FROM UserDefinition WHERE ChildID = @pkc1 AND COMPANYID = @COMPANYID)
 		declare @primarykey_text nvarchar(100) = ''
 

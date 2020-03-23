@@ -1,8 +1,5 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSupd_dboFP_TMPL_RNTL_VADD_CONF_ATCH]    Script Date: 3/10/2020 7:09:34 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSupd_dboFP_TMPL_RNTL_VADD_CONF_ATCH]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSupd_dboFP_TMPL_RNTL_VADD_CONF_ATCH]
 GO
 
 create procedure [dbo].[sp_MSupd_dboFP_TMPL_RNTL_VADD_CONF_ATCH]

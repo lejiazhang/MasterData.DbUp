@@ -1,8 +1,5 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSdel_dboUMS_USR_EXTR_RLTN]    Script Date: 2/24/2020 8:04:44 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSdel_dboUMS_USR_EXTR_RLTN]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSdel_dboUMS_USR_EXTR_RLTN]
 GO
 
 CREATE procedure [dbo].[sp_MSdel_dboUMS_USR_EXTR_RLTN]
@@ -16,7 +13,7 @@ CREATE procedure [dbo].[sp_MSdel_dboUMS_USR_EXTR_RLTN]
 as
 
 begin
-    declare @companyId smallint = 1
+    declare @companyId smallint = '$CompanyId$'
 
     IF EXISTS(SELECT * FROM [dbo].[UMS_USR_EXTR_RLTN] WHERE [EXTR_RLTN_ID] = @EXTR_RLTN_ID)
 		begin
