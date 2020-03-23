@@ -7,7 +7,7 @@ CREATE procedure [dbo].[sp_MSdel_dboFP_FNCL_PROD]
 as
 begin  
 	declare @primarykey_text nvarchar(100) = ''
-	DECLARE @COMPANYID SMALLINT = 1
+	DECLARE @COMPANYID SMALLINT = 2
 
 	IF EXISTS (SELECT 1 FROM [dbo].[FinancialProduct] WHERE [FinancialProductID] = @pkc1 and CompanyID = @COMPANYID)
 		DELETE FROM [dbo].[FinancialProduct] WHERE [FinancialProductID] = @pkc1 and CompanyID = @COMPANYID

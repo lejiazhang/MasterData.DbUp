@@ -1,10 +1,6 @@
-/****** Object:  StoredProcedure [dbo].[sp_MSins_dboUMS_USR_EXTR_RLTN]    Script Date: 2/24/2020 8:44:55 AM ******/
-SET ANSI_NULLS ON
+IF  EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_MSins_dboUMS_USR_EXTR_RLTN]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE [dbo].[sp_MSins_dboUMS_USR_EXTR_RLTN]
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 CREATE procedure [dbo].[sp_MSins_dboUMS_USR_EXTR_RLTN]
     @EXTR_RLTN_ID int,

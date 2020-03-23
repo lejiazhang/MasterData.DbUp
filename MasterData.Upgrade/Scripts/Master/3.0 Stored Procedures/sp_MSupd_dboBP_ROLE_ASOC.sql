@@ -10,7 +10,7 @@ create procedure [dbo].[sp_MSupd_dboBP_ROLE_ASOC]
 		@EXEC_DTE datetime,
 		@FLAG char(1),
 		@BUSS_PTNR_ID int,
-   		@ACT_IND bit not null,
+   		@ACT_IND bit,
 		@pkc1 int = NULL,
 		@bitmap binary(1)
 as

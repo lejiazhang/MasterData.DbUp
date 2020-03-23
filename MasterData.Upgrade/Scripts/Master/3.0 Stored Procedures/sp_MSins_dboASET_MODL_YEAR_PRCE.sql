@@ -38,7 +38,7 @@ BEGIN
             [REJN_PCNT],
             [AssetModelExtDetailId],
             [AssetModelYearTypeId],
-            [CompnayId]
+            [CompanyId]
         ) values (
         @c1,
         @c2,

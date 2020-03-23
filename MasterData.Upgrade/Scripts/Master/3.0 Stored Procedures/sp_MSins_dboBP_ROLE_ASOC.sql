@@ -10,7 +10,7 @@ create procedure [dbo].[sp_MSins_dboBP_ROLE_ASOC]
     @EXEC_DTE datetime,
     @FLAG char(1),
     @BUSS_PTNR_ID int,
-    @ACT_IND bit not null
+    @ACT_IND bit 
 as
 
 begin
@@ -33,7 +33,7 @@ begin
         @BUSS_PTNR_ID,
         @ACT_IND	) 
 
-    if (@c6 = 'I' and not exists (select 1 from [dbo].[BusinessPartnerRole] where [RoleID] = @c2 and [BusinessPartnerID] = @c7))
+    if (@FLAG = 'I' and not exists (select 1 from [dbo].[BusinessPartnerRole] where [RoleID] = @BP_ROLE_ID and [BusinessPartnerID] = @BUSS_PTNR_ID))
     begin  
         insert into [dbo].[BusinessPartnerRole](
             [RoleID],

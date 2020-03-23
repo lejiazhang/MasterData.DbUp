@@ -49,7 +49,7 @@ create procedure [dbo].[sp_MSins_dboCHRT_DCSN_TABL]
     @FLAG char(1)
 as
 begin
-    if (@c44 = 'I' and not exists (SELECT 1 FROM [dbo].[ChartDetail] WHERE [ChartDetailSEQ] = @c1))
+    if (@FLAG = 'I' and not exists (SELECT 1 FROM [dbo].[ChartDetail] WHERE [ChartDetailSEQ] = @DCSN_TABL_ID))
     begin  
         insert into [dbo].[ChartDetail](
             [ChartDetailSEQ],
@@ -110,7 +110,7 @@ begin
         @EFCT_END_DTE,
         @NST_CODE,
         @OTP_PRCE_PCNT,
-        '$CompanyId$'	) 
+       '$CompanyId$'	) 
     end 
 end
 

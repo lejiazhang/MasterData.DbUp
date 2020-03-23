@@ -46,7 +46,7 @@ begin
 					   ,@AssetMakeId
 					   ,@AssetModelCode
 					   ,GETDATE()
-					   ,'NEW SYNC'
+					   ,'dbo'
 					   ,'$CompanyId$'
 					   ,@AssetModelExtDetailId)
 		end

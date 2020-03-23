@@ -13,7 +13,7 @@ create procedure [dbo].[sp_MSins_dboCHRT_MSTR]
     @FLAG char(1)
 as
 begin
-    if (@c8 = 'I' and not EXISTS (SELECT 1 FROM [dbo].[ChartMain] WHERE [ChartMainID] = @c1))
+    if (@FLAG = 'I' and not EXISTS (SELECT 1 FROM [dbo].[ChartMain] WHERE [ChartMainID] = @MSTR_ID))
     begin  
         insert into [dbo].[ChartMain](
             [ChartMainID],

@@ -5,7 +5,7 @@ GO
 CREATE procedure [dbo].[sp_MSdel_dboFP_FNCL_PROD_GRP]		
 	@pkc1 int
 as
-declare @companyId smallint = 1
+declare @companyId smallint = 2
 IF EXISTS (SELECT 1 FROM [dbo].[FinancialGroup] WHERE FinancialGroupID = @pkc1 and CompanyID = @COMPANYID)
 	begin  
 		declare @primarykey_text nvarchar(100) = ''

@@ -24,44 +24,7 @@ as
 
 begin
 
-    insert into [dbo].[ASET_MODL_CODE] (
-		[MODL_ID],
-		[NME],
-		[DSCR],
-		[EXTR_MODL_CODE],
-		[MAKE_TYPE_ID],
-		[ASET_TYPE_ID],
-		[ASET_SBTP_ID],
-		[BRND_TYPE_ID],
-		[BLAZ_TYPE_ID],
-		[NST],
-		[MSRP],
-		[EXTR_CODE],
-		[ACT_IND],
-		[INSR_DTE],
-		[UPDT_DTE],
-		[EXEC_DTE],
-		[FLAG]
-	) values (
-		@MODL_ID,
-		@NME,
-		@DSCR,
-		@EXTR_MODL_CODE,
-		@MAKE_TYPE_ID,
-		@ASET_TYPE_ID,
-		@ASET_SBTP_ID,
-		@BRND_TYPE_ID,
-		@BLAZ_TYPE_ID,
-		@NST,
-		@MSRP,
-		@EXTR_CODE,
-		@ACT_IND,
-		@INSR_DTE,
-		@UPDT_DTE,
-		@EXEC_DTE,
-		@FLAG	) 
-
-    if (@c17 = 'I' and not exists(SELECT 1 FROM [dbo].[AssetModel] WHERE [AssetModelExternalID] = @MODL_ID))
+    if (@FLAG = 'I' and not exists(SELECT 1 FROM [dbo].[AssetModel] WHERE [AssetModelExternalID] = @MODL_ID))
     begin  
         insert into [dbo].[AssetModel](
             [AssetModelExternalID],

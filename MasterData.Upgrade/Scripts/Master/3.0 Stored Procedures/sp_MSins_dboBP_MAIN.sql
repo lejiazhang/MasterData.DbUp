@@ -24,7 +24,7 @@ as
 
 begin
 
-	if (@c17 = 'I' and not exists (select 1 from [dbo].[BusinessPartner] where [BusinessPartnerID] = @c1))
+	if (@FLAG = 'I' and not exists (select 1 from [dbo].[BusinessPartner] where [BusinessPartnerID] = @BUSS_PTNR_ID))
 	begin  
 		insert into [dbo].[BusinessPartner](
 			[BusinessPartnerID],
@@ -39,11 +39,11 @@ begin
 		@LEGL_STS_KEY,
 		@CPTL_REGT_AMNT,
 		GETDATE(),
-		'$CompanyId$') 
+		'$CompanyId$' ) 
 
 	end  
 
-	if (@c17 = 'I' and not exists (select 1 from [dbo].[BusinessPartnerCompany] where [BusinessPartnerID] = @c1))
+	if (@FLAG = 'I' and not exists (select 1 from [dbo].[BusinessPartnerCompany] where [BusinessPartnerID] = @BUSS_PTNR_ID))
 	begin  
 	insert into [dbo].[BusinessPartnerCompany](
 			[BusinessPartnerID],

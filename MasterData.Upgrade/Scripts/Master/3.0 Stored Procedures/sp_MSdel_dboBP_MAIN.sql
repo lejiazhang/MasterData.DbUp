@@ -6,9 +6,11 @@ create procedure [dbo].[sp_MSdel_dboBP_MAIN]
 		@pkc1 int
 as
 
+declare @primarykey_text nvarchar(100) = ''
+
 if exists (select 1 from [dbo].[BusinessPartner] where [BusinessPartnerID] = @pkc1)
 begin  
-	declare @primarykey_text nvarchar(100) = ''
+	
 	delete [dbo].[BusinessPartner]
 	where [BusinessPartnerID] = @pkc1
 if @@rowcount = 0
@@ -22,7 +24,6 @@ end
 
 if exists (select 1 from [dbo].[BusinessPartnerCompany] where [BusinessPartnerID] = @pkc1)
 begin  
-	declare @primarykey_text nvarchar(100) = ''
 	delete [dbo].[BusinessPartnerCompany]
 	where [BusinessPartnerID] = @pkc1
 if @@rowcount = 0
@@ -36,7 +37,6 @@ end
 
 if exists (select 1 from [dbo].[BusinessPartnerRole] where [BusinessPartnerID] = @pkc1)
 begin  
-	declare @primarykey_text nvarchar(100) = ''
 	delete [dbo].[BusinessPartnerCompany]
 	where [BusinessPartnerID] = @pkc1
 if @@rowcount = 0
